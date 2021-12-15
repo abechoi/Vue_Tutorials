@@ -7,11 +7,11 @@
 Tutorial by The Net Ninja on installing and getting started with Vue 3.
 </p>
 
-1.  [Getting Started](#getting_started)
-2.  [Dynamic Values](#dynamic-values))
+1.  [Getting Started](#getting-started)
+2.  [Dynamic Values](#dynamic-values)
 3.  [Click Events](#click-events)
-4.  [Conditional Rendering](/Compendium/Section_IV)
-5.  [Section V](/Compendium/Section_V)
+4.  [Conditional Rendering](#conditional-rendering)
+5.  [Other Mouse Events](#other-mouse-events)
 6.  [Section VI](/Compendium/Section_VI)
 7.  [Section VII](/Compendium/Section_VII)
 8.  [Section VIII](/Compendium/Section_VIII)
@@ -163,4 +163,42 @@ const app = Vue.createApp({
     }
 
 })
+```
+
+## Other Mouse Events
+
+- mouseover triggers upon hovering over the div with mouse pointer.
+- mouseleave triggers upon moving out of the div with mouse pointer.
+- dblclick triggers upon doubleclicking the div.
+- mousemove triggers upon moving the mouse.
+  
+index.html
+```
+<!-- mouse events -->
+<div class="box" @mouseover="handleEvent($event, 5)">mouseover</div>
+<div class="box" @mouseleave="handleEvent">mouseleave</div>
+<div class="box" @dblclick="handleEvent">doubleclick</div>
+<div class="box" @mousemove="handleMousemove">position: {{x}},{{y}}</div>
+```
+
+app.js
+```
+data() {
+    return {
+        x: 0,
+        y: 0
+    }
+},
+methods: {
+    handleEvent(e, num){
+        console.log(e, e.type)
+        if(num){
+            console.log(num)
+        }
+    },
+    handleMousemove(e){
+        this.x = e.offsetX
+        this.y = e.offsetY
+    }
+}
 ```

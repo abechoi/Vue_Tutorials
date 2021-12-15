@@ -5,16 +5,24 @@ const app = Vue.createApp({
             showBooks: true,
             title: "The Final Empire",
             author: "Brandon Sanderson",
-            age: 45
+            age: 45,
+            x: 0,
+            y: 0
         }
     },
     methods: {
-        changeTitle(title) {
-            //this.title = "Words of Radiance"
-            this.title = title
-        },
         isShowBooks(){
             this.showBooks = !this.showBooks
+        },
+        handleEvent(e, num){
+            console.log(e, e.type)
+            if(num){
+                console.log(num)
+            }
+        },
+        handleMousemove(e){
+            this.x = e.offsetX
+            this.y = e.offsetY
         }
     }
 
