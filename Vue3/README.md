@@ -12,7 +12,7 @@ Tutorial by The Net Ninja on installing and getting started with Vue 3.
 3.  [Click Events](#click-events)
 4.  [Conditional Rendering](#conditional-rendering)
 5.  [Other Mouse Events](#other-mouse-events)
-6.  [Section VI](/Compendium/Section_VI)
+6.  [Loops](#loops)
 7.  [Section VII](/Compendium/Section_VII)
 8.  [Section VIII](/Compendium/Section_VIII)
 9.  [Section IX](/Compendium/Section_IX)
@@ -199,6 +199,36 @@ methods: {
     handleMousemove(e){
         this.x = e.offsetX
         this.y = e.offsetY
+    }
+}
+```
+
+## Loops
+
+- v-for="i in array" to get i from array.
+
+index.html
+```
+<div v-if="showBooks">
+    <ul>
+        <li v-for="book in books">
+            <h3>{{book.title}}</h3>
+            <p>{{book.author}}</p>
+        </li>
+    </ul>
+</div>
+```
+
+app.js
+```
+data() {
+    return {
+        showBooks: true,
+        books: [
+            {title: "Name of the Wind", author: "Patrick Rothfuss"},
+            {title: "The Way of Kings", author: "Brandon Sanderson"},
+            {title: "The Final Empire", author: "Brandon Sanderson"}
+        ]
     }
 }
 ```
