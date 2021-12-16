@@ -13,7 +13,7 @@ Tutorial by The Net Ninja on installing and getting started with Vue 3.
 4.  [Conditional Rendering](#conditional-rendering)
 5.  [Other Mouse Events](#other-mouse-events)
 6.  [Loops](#loops)
-7.  [Section VII](/Compendium/Section_VII)
+7.  [TEST](/Compendium/Section_VII)
 8.  [Section VIII](/Compendium/Section_VIII)
 9.  [Section IX](/Compendium/Section_IX)
 10. [Section X](/Compendium/Section_X)
