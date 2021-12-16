@@ -13,7 +13,7 @@ Tutorial by The Net Ninja on installing and getting started with Vue 3.
 4.  [Conditional Rendering](#conditional-rendering)
 5.  [Other Mouse Events](#other-mouse-events)
 6.  [Loops](#loops)
-7.  [Section VII](/Compendium/Section_VII)
+7.  [Attribute Binding](#attribute-binding)
 8.  [Section VIII](/Compendium/Section_VIII)
 9.  [Section IX](/Compendium/Section_IX)
 10. [Section X](/Compendium/Section_X)
@@ -228,6 +228,42 @@ data() {
             {title: "Name of the Wind", author: "Patrick Rothfuss"},
             {title: "The Way of Kings", author: "Brandon Sanderson"},
             {title: "The Final Empire", author: "Brandon Sanderson"}
+        ]
+    }
+}
+```
+
+## Attribute Binding
+
+- v-bind:(attribute)="(variable)" binds a variable to an attribute.
+- :(attribute)="(variable)" is the shorthand for v-bind.
+
+index.html
+```
+<!-- Attribute Binding -->
+<a v-bind:href="url">abechoi.com</a>
+
+<div v-if="showBooks">
+    <ul>
+        <li v-for="book in books">
+            <img :src="book.img" :alt="book.title">
+            <h3>{{book.title}}</h3>
+            <p>{{book.author}}</p>
+        </li>
+    </ul>
+</div>
+```
+
+app.js
+```
+data() {
+    return {
+        url: "https://abechoi.com",
+        showBooks: true,
+        books: [
+            {title: "Name of the Wind", author: "Patrick Rothfuss", img: "assets/1.jpg"},
+            {title: "The Way of Kings", author: "Brandon Sanderson", img: "assets/2.jpg"},
+            {title: "The Final Empire", author: "Brandon Sanderson", img: "assets/3.jpg"}
         ]
     }
 }
