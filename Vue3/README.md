@@ -14,7 +14,7 @@ Tutorial by The Net Ninja on installing and getting started with Vue 3.
 5.  [Other Mouse Events](#other-mouse-events)
 6.  [Loops](#loops)
 7.  [Attribute Binding](#attribute-binding)
-8.  [Dynamic Classes](#dynamics-classes)
+8.  [Dynamic Classes](#dynamic-classes)
 9.  [Section IX](/Compendium/Section_IX)
 10. [Section X](/Compendium/Section_X)
 
