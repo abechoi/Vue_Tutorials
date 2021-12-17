@@ -271,12 +271,26 @@ data() {
 
 ## Dynamic Classes
 
+- :class="{ CLASSNAME: CONDITION }" adds a class if the condition is true.
+
 index.html
 ```
-
+<div v-if="showBooks">
+    <ul>
+        <li v-for="book in books" :class="{ fav: book.isFav }">
+            <img :src="book.img" :alt="book.title">
+            <h3>{{book.title}}</h3>
+            <p>{{book.author}}</p>
+        </li>
+    </ul>
+</div>
 ```
 
 app.js
 ```
-
+books: [
+    {title: "Name of the Wind", author: "Patrick Rothfuss", img: "assets/1.jpg", isFav: true},
+    {title: "The Way of Kings", author: "Brandon Sanderson", img: "assets/2.jpg", isFav: false},
+    {title: "The Final Empire", author: "Brandon Sanderson", img: "assets/3.jpg", isFav: true}
+]
 ```
