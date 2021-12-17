@@ -15,7 +15,7 @@ Tutorial by The Net Ninja on installing and getting started with Vue 3.
 6.  [Loops](#loops)
 7.  [Attribute Binding](#attribute-binding)
 8.  [Dynamic Classes](#dynamic-classes)
-9.  [Section IX](/Compendium/Section_IX)
+9.  [TEST](TEST)
 10. [Section X](/Compendium/Section_X)
 
 ## Getting Started
