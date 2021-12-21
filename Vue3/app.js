@@ -2,7 +2,6 @@ const app = Vue.createApp({
     // function named data that returns an object
     data() {
         return {
-            url: "https://abechoi.com",
             showBooks: true,
             books: [
                 {title: "Name of the Wind", author: "Patrick Rothfuss", img: "assets/1.jpg", isFav: true},
@@ -14,6 +13,14 @@ const app = Vue.createApp({
     methods: {
         isShowBooks(){
             this.showBooks = !this.showBooks
+        },
+        toggleFav(book){
+            book.isFav = !book.isFav
+        }
+    },
+    computed: {
+        filteredBooks(){
+            return this.books.filter((book) => book.isFav)
         }
     }
 

@@ -15,7 +15,7 @@ Tutorial by The Net Ninja on installing and getting started with Vue 3.
 6.  [Loops](#loops)
 7.  [Attribute Binding](#attribute-binding)
 8.  [Dynamic Classes](#dynamic-classes)
-9.  [TEST](TEST)
+9.  [Computed Properties](#computed-properties)
 10. [Section X](/Compendium/Section_X)
 
 ## Getting Started
@@ -84,6 +84,9 @@ app.mount("#app")
 ```
 
 ## Click Events
+
+- v-on:click="VARIABLE/METHOD" triggers action upon clicking.
+- @click="VARIABLE/METHOD" is the shorthand for v-on:click.
 
 index.html
 ```
@@ -293,4 +296,46 @@ books: [
     {title: "The Way of Kings", author: "Brandon Sanderson", img: "assets/2.jpg", isFav: false},
     {title: "The Final Empire", author: "Brandon Sanderson", img: "assets/3.jpg", isFav: true}
 ]
+```
+
+## Computed Properties
+
+index.html
+```
+<div v-if="showBooks">
+    <ul>
+        <li v-for="book in filteredBooks" :class="{ fav: book.isFav }" @click="toggleFav(book)">
+            <img :src="book.img" :alt="book.title">
+            <h3>{{book.title}}</h3>
+            <p>{{book.author}}</p>
+        </li>
+    </ul>
+</div>
+```
+
+app.js
+```
+data() {
+    return {
+        showBooks: true,
+        books: [
+            {title: "Name of the Wind", author: "Patrick Rothfuss", img: "assets/1.jpg", isFav: true},
+            {title: "The Way of Kings", author: "Brandon Sanderson", img: "assets/2.jpg", isFav: false},
+            {title: "The Final Empire", author: "Brandon Sanderson", img: "assets/3.jpg", isFav: true}
+        ]
+    }
+},
+methods: {
+    isShowBooks(){
+        this.showBooks = !this.showBooks
+    },
+    toggleFav(book){
+        book.isFav = !book.isFav
+    }
+},
+computed: {
+    filteredBooks(){
+        return this.books.filter((book) => book.isFav)
+    }
+}
 ```
