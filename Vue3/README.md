@@ -16,7 +16,18 @@ Tutorial by The Net Ninja on installing and getting started with Vue 3.
 7.  [Attribute Binding](#attribute-binding)
 8.  [Dynamic Classes](#dynamic-classes)
 9.  [Computed Properties](#computed-properties)
-10. [Section X](/Compendium/Section_X)
+10. [Vue CLI](#vue-cli)
+11. [Getting Started](#getting-started)
+12. [Dynamic Values](#dynamic-values)
+13. [Click Events](#click-events)
+14. [Conditional Rendering](#conditional-rendering)
+15. [Other Mouse Events](#other-mouse-events)
+16. [Loops](#loops)
+17. [Attribute Binding](#attribute-binding)
+18. [Dynamic Classes](#dynamic-classes)
+19. [Computed Properties](#computed-properties)
+20. [Section X](/Compendium/Section_X)
+
 
 ## Getting Started
 
@@ -338,4 +349,22 @@ computed: {
         return this.books.filter((book) => book.isFav)
     }
 }
+```
+
+## Vue CLI
+
+1. Install Node
+   
+2. Install Vue CLI
+
+```
+npm install -g @vue/cli
+
+# If permission error occurs, try:
+sudo chown -R $USER /usr/local/lib/node_modules
+```
+
+3. Create a Vue Project
+```
+vue create modal-project
 ```
